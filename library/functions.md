@@ -19,8 +19,13 @@
 		<tr><td>dir()</td><td>id()</td><td>oct()</td><td>sorted()</td><td>intern()</td></tr>
 	</tbody>
 </table>
-|a|b|c|
-|d|e|f|
+
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 - - - 
 说明：  
 - 函数名前的斜体class是为了强调这是一个类型，需要特别注意能否被调用以及实例化  
