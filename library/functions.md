@@ -1,30 +1,23 @@
-<table border="1px solid black" align='center'>
-	<thead><tr><th></th><th></th><th>内置函数</th><th></th><th></th></tr></thead>
-	<tbody valign="top">
-		<tr><td>abs()绝对值</td><td>divmod()</td><td>input()</td><td>open()</td><td>staticmethod()</td></tr>
-		<tr><td>all()</td><td>enumerate()</td><td>int()</td><td>ord()</td><td>str()</td></tr>
-		<tr><td>any()</td><td>eval()</td><td>isinstance()</td><td>pow()</td><td>sum()</td></tr>
-		<tr><td>basestring()</td><td>execfile()</td><td>issubclass()</td><td>print()</td><td>super()</td></tr>
-		<tr><td>bin()</td><td>file()</td><td>iter()</td><td>property()</td><td>tuple()</td></tr>
-		<tr><td>bool()</td><td>filter()</td><td>len()</td><td>range()</td><td>type()</td></tr>
-		<tr><td>bytearray()</td><td>float()</td><td>list()</td><td>raw_input()</td><td>unichr()</td></tr>
-		<tr><td>callable()</td><td>format()</td><td>locals()</td><td>reduce()</td><td>unicode()</td></tr>
-		<tr><td>chr()</td><td>frozenset()</td><td>long()</td><td>reload()</td><td>vars()</td></tr>
-		<tr><td>classmethod()</td><td>getattr()</td><td>map()</td><td>repr()</td><td>xrange()</td></tr>
-		<tr><td>cmp()</td><td>globals()</td><td>max()</td><td>reversed()</td><td>zip()</td></tr>
-		<tr><td>compile()</td><td>hasattr()</td><td>memoryview()</td><td>round()</td><td>__import__()</td></tr>
-		<tr><td>complex()</td><td>hash()</td><td>min()</td><td>set()</td><td>apply()</td></tr>
-		<tr><td>delattr()</td><td>help()</td><td>next()</td><td>setattr()</td><td>buffer()</td></tr>
-		<tr><td>dict()</td><td>hex()</td><td>object()</td><td>slice()</td><td>coerce()</td></tr>
-		<tr><td>dir()</td><td>id()</td><td>oct()</td><td>sorted()</td><td>intern()</td></tr>
-	</tbody>
-</table>
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+
+|        		|				|	内置函数		|				|		 		|
+|:-------------:|:-------------:| 	:-----:		| 	:-----:		|	:------:	|
+|abs()			|divmod()		|input()		|open()			|staticmethod()	|
+|all()			|enumerate()	|int()			|ord()			|str()			|
+|any()			|eval()			|isinstance()	|pow()			|sum()			|
+|basestring()	|execfile()		|issubclass()	|print()		|super()		|
+|bin()			|file()			|iter()			|property()		|tuple()		|
+|bool()			|filter()		|len()			|range()		|type()			|
+|bytearray()	|float()		|list()			|raw_input()	|unichr()		|
+|callable()		|format()		|locals()		|reduce()		|unicode()		|
+|chr()			|frozenset()	|long()			|reload()		|vars()			|
+|classmethod()	|getattr()		|map()			|repr()			|xrange()		|
+|cmp()			|globals()		|max()			|reversed()		|zip()			|
+|compile()		|hasattr()		|memoryview()	|round()		|__import__()	|
+|complex()		|hash()			|min()			|set()			|apply()		|
+|delattr()		|help()			|next()			|setattr()		|buffer()		|
+|dict()			|hex()			|object()		|slice()		|coerce()		|
+|dir()			|id()			|oct()			|sorted()		|intern()		|
 
 - - - 
 说明：  
