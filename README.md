@@ -15,6 +15,10 @@ Python 2.7.8 官方文档的中文翻译
 
 **希望有更多人能够加入进来。**
 
+###链接：###
+0.	[目录](./index.md)
+1.	[简介](./intro.md)
+2.	[内置函数](./functions.md)
 - - -
 当前进度：[标准库](https://docs.python.org/2/library/index.html)
 - - -

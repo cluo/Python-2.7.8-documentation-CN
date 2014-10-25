@@ -5,11 +5,11 @@
 |abs绝对值/模			|divmod  		|input  		|open  			|staticmethod  	|
 |all全部				|enumerate  	|int  			|ord  			|str  			|
 |any存在一个			|eval  			|isinstance  	|pow  			|sum  			|
-|basestring*类*		|execfile  		|issubclass  	|print  		|super  		|
+|basestring类		|execfile  		|issubclass  	|print  		|super  		|
 |bin二进制转换		|file  			|iter  			|property  		|tuple  		|
-|bool*类*			|filter  		|len  			|range  		|type  			|
-|bytearray*类*  		|float  		|list  			|raw_input  	|unichr  		|
-|callable可调用		|format  		|locals  		|reduce  		|unicode  		|
+|bool类				|filter  		|len  			|range  		|type  			|
+|bytearray类  		|float  		|list  			|raw_input  	|unichr  		|
+|callable是否可调用	|format  		|locals  		|reduce  		|unicode  		|
 |chr数字->字符		|frozenset  	|long  			|reload  		|vars  			|
 |classmethod声明类方法|getattr  		|map  			|repr  			|xrange  		|
 |cmp 比较			|globals  		|max  			|reversed  		|zip  			|
