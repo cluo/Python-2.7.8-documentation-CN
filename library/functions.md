@@ -1,28 +1,29 @@
 
 
-|        		|				|	内置函数		|				|		 		|
-|:-------------:|:-------------:| 	:-----:		| 	:-----:		|	:------:	|
-|abs()			|divmod()		|input()		|open()			|staticmethod()	|
-|all()			|enumerate()	|int()			|ord()			|str()			|
-|any()			|eval()			|isinstance()	|pow()			|sum()			|
-|basestring()	|execfile()		|issubclass()	|print()		|super()		|
-|bin()			|file()			|iter()			|property()		|tuple()		|
-|bool()			|filter()		|len()			|range()		|type()			|
-|bytearray()	|float()		|list()			|raw_input()	|unichr()		|
-|callable()		|format()		|locals()		|reduce()		|unicode()		|
-|chr()			|frozenset()	|long()			|reload()		|vars()			|
-|classmethod()	|getattr()		|map()			|repr()			|xrange()		|
-|cmp()			|globals()		|max()			|reversed()		|zip()			|
-|compile()		|hasattr()		|memoryview()	|round()		|\_\_import\_\_()|
-|complex()		|hash()			|min()			|set()			|apply()		|
-|delattr()		|help()			|next()			|setattr()		|buffer()		|
-|dict()			|hex()			|object()		|slice()		|coerce()		|
-|dir()			|id()			|oct()			|sorted()		|intern()		|
+|        			|				|	内置函数		|				|		 		|
+|:-------------:	|:-------------:| 	:-----:		| 	:-----:		|	:------:	|
+|abs绝对值/模			|divmod  		|input  		|open  			|staticmethod  	|
+|all全部				|enumerate  	|int  			|ord  			|str  			|
+|any存在一个			|eval  			|isinstance  	|pow  			|sum  			|
+|basestring*类*		|execfile  		|issubclass  	|print  		|super  		|
+|bin二进制转换		|file  			|iter  			|property  		|tuple  		|
+|bool*类*			|filter  		|len  			|range  		|type  			|
+|bytearray*类*  		|float  		|list  			|raw_input  	|unichr  		|
+|callable可调用		|format  		|locals  		|reduce  		|unicode  		|
+|chr数字->字符		|frozenset  	|long  			|reload  		|vars  			|
+|classmethod声明类方法|getattr  		|map  			|repr  			|xrange  		|
+|cmp 比较			|globals  		|max  			|reversed  		|zip  			|
+|compile  			|hasattr  		|memoryview  	|round  		|\_\_import\_\_ |
+|complex  			|hash  			|min  			|set  			|apply  		|
+|delattr  			|help  			|next  			|setattr  		|buffer  		|
+|dict  				|hex  			|object  		|slice  		|coerce  		|
+|dir  				|id  			|oct  			|sorted  		|intern  		|
 
 - - - 
-说明：  
+**说明：**  
 * 函数名前的斜体class是为了强调这是一个类型，需要特别注意能否被调用以及实例化  
 * 参数列表中由[]包括的为可选参数
+
 - - -
 
 **abs(*x*)**  
@@ -68,7 +69,7 @@
 
 **bin(*x*)**
 >	将一个整数转换为二进制字符串，结果是一个有效的python表达式。  
-	当x不是Python的int对象时,必须定义一个返回整形的方法： __index__()。  
+	当x不是Python的int对象时,必须定义一个返回整形的方法： \_\_index\_\_()。  
 
 >	最早出现在2.6版本中。
 
