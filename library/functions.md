@@ -22,8 +22,8 @@
 - - - 
 **说明：**  
 
-- 函数名前的斜体class是为了强调这是一个类型，需要特别注意能否被调用以及实例化  
-- 参数列表中由[]包括的为可选参数
+- 函数名前的斜体class是为了强调这是一个类型
+- 参数列表中包含在[]的为可选参数
 
 - - -
 
@@ -265,5 +265,109 @@ Python中的类方法与C++与Java的静态方法(static method)不同，具体�
 最早在2.3版本出现
 
 在2.6版本有所改变：添加了*start*参数
+
+- - -
+
+**eval(*expression[, globals[, locals]]*)**
+
+*expression*参数为Unicode或*Latin-1*编码的字符串。可选参数*globals*必须是字典，*locals*可以是任何映射对象(mapping object)。
+
+在版本2.4有所改变：在此之前*locals*参数必须是字典。
+
+*expression* 参数根据*globals*与*locals*参数（分别作为全局名字空间与局部名字空间）被解析，并
+被赋值为python表达式(严格的说，是条件列表(condition list) )。
+
+- 如果存在*globals*参数且不存在'\_\_builtins\_\_'，则在*expression*参数被解析前，将*globals*参数复制到全局变量中,之前的全局变量被推入堆栈中。（这意味着*expression*参数一般来说具有对标准\_\_builtin\_\_模块的全部权限，并且<u>受限制的环境是具有传递性的</u>。）
+- 如果省略*locals*参数，则*locals*的默认值为*globals*
+- 如果省略*locals*与*globals*参数，则*expression*在*eval()*被调用的环境中解析。
+
+返回值就是*expression*参数的计算结果。语法错误会作为异常抛出。
+
+例： 
+	
+	>>> x = 1
+	>>> print eval('x+1')
+	2
+	>>> print eval('x+1',{'x':2})
+	3
+	>>> print eval('x+y',{'y':2})
+	Traceback (most recent call last):
+  		File "<stdin>", line 1, in <module>
+  		File "<string>", line 1, in <module>
+	NameError: name 'x' is not defined
+
+这个函数还可以用来计算任意的Code对象(例如*compile()*的返回值)。在这种情况下传递给*expression*参数的是代码而不是字符串。如果编译Code对象时的*mode*参数值为'exec'，则*eval()*的返回值为*None*。
+
+**注:** 表达式的动态解析是通过*exec()*完成的；对一个文件的表达式解析则通过*execfile()*来完成；*globals()*与*locals()*函数在*eval()*或*execfile()*中或许有用，它们分别以字典的形式返回当前的全局变量或局部变量。
+
+对于可以安全的计算（只包含字面值的）字符串表达式的函数，可以参考*ast.literal_eval()*
+
+- - -
+
+**execfile(*filename[, globals[, locals*]])**
+
+这个函数与*exec()*类似，不过解析的是一个文件而不是字符串。它与*import*表达式不同之处在于它并不采用模块管理方法——实际上它无条件地读取一个文件而不创建新的模块。
+
+*file*参数根据*globals*与*locals*参数（分别作为全局名字空间与局部名字空间）被解析，并
+被赋值为python表达式序列(类似于模块)。*locals*参数可以是任何映射对象(mapping object)。需要注意的是：从模块的角度看，全局变量与局部变量是同一个字典。如果两个分离的对象被解析为*globals*与*locals*，则解析后的代码看起来就像嵌套在类中一样。
+
+在版本2.4有所改变：在此之前*locals*参数必须是字典。
+
+- 如果省略*locals*参数，则*locals*的默认值为*globals*。
+- 如果省略*locals*与*globals*参数，则*expression*在*eval()*被调用的环境中解析。
+
+返回值为*None*。
+
+**注：** 默认的局部变量按照*locals()*函数所描述的那样行为：对默认局部变量字典的修改是不允许的。 如果你想要知道*execfile()*函数对局部变量字典的影响，则显式地传入一个*locals*参数。用*execfile()*来修改函数的局部变量是不可靠的。
+
+- - -
+
+**file(*name[, mode[, buffering]]*)**
+
+这是*file*类型的构造函数，更多的描述在[数值类型](./library/stdtypes.md)中。其参数与下面介绍的内置函数*open()*所描述的一致。
+
+当要打开一个文件时，推荐使用*open()*而不是直接调用*file()*构造函数。该构造函数更适合用来进行类型检测（例如，*isinstance(f,file)*）
+
+最早在版本2.2出现。
+
+- - -
+
+**filter(*function, iterable*)**
+
+从*iterable*参数的元素构造一个列表，这个列表的元素是*iterable*中使得*function*返回*True*的元素。
+
+*iterable*参数要么是一个序列，要么是一个可迭代的容器，要么是一个迭代器。若*iterable*是一个字符串(string)或元组(tuple)，则返回值类型不变；否则返回值的类型总是一个列表(list)。
+
+如果*function*参数为*None*，则构造的列表中的元素为*iterable*中所有自身为*True*的元素。
+
+例： 
+
+	>>> l = [1,2,3,4]
+	>>> print filter(None,l)
+	[1,2,3,4]
+	>>> def foo(x):
+	...     if x>2:
+	...             return True
+	...     else:
+	...             return False
+	...
+	>>> print filter(foo,l)
+	[3,4]
+
+**注：** 如果*function*不为*None*，则函数filter(*function, iterable*)等价于python表达式：[*item* for *item* in *iterable* if *function(item)*]（这是因为python中的函数也是对象）。
+
+对于这个函数的简单的迭代器版本，以及选取出返回*False*值的元素的版本，可以参考[迭代工具](./library/itertools.md)中的*itertools.iflter()*及*itertools.ifilterfalse()*。
+
+- - -
+
+*class* **float(*[x]*)**
+
+返回一个由*x*(数字或字符串)构造的浮点数。
+
+- 如果参数*x*是字符串，那么*x*为**一个**十进制整数或浮点数(可以带空格)，参数也可以是*[+|-]NaN*或*[+|-]Inf*（忽略大小写与前缀*+*且不返回*-NaN*），返回值依赖于底层的C语言库。否则抛出*ValueError*。
+- 如果参数是整型(长整型)或浮点数，则返回同样数值的浮点数（精度调整为浮点数的精度）。
+- 如果省略参数，则返回*0.0*。
+
+对浮点类型的说明可以参考[数值类型](./library/stdtypes.md)。
 
 - - -
